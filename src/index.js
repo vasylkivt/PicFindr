@@ -12,8 +12,8 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallerySLBox = new SimpleLightbox('.gallery-list a');
 
-const formEl = document.getElementById('search-form');
-const galleryEl = document.getElementById('gallery-list');
+const formEl = document.querySelector('#search-form');
+const galleryEl = document.querySelector('#gallery-list');
 const loadMoreEl = document.querySelector('.load-more');
 const objectForObservation = document.querySelector('.object-for-observation');
 const infiniteScrollEl = document.querySelector('.infinite-scroll-input');
@@ -39,11 +39,10 @@ async function onSubmit(e) {
         'Так',
         'Ні',
         () => {
-          resolve(); // Викликаємо resolve, щоб продовжити виконання коду
+          resolve();
         },
         () => {
           resetToDefault();
-          return;
         },
         {
           width: '350px',
